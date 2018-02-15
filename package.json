@@ -1,0 +1,14 @@
+{
+  "name": "ddclient.zeit.sh",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "micro server.js"
+  },
+  "dependencies": {
+    "micro": "^9.1.0",
+    "mz": "^2.7.0"
+  },
+  "now": {
+    "alias": "ddclient.zeit.sh"
+  }
+}
