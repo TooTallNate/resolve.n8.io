@@ -1,12 +1,3 @@
+# resolve.now.sh
 
-Example Google Domains configuration:
-
-```
-protocol=dyndns2
-ssl=yes
-use=web, web=https://ddclient.zeit.sh/
-server=domains.google.com
-login=<generated username>
-password='<generated password>'
-your-domain.tld
-```
+Resolves a hostname. Example: https://resolve.now.sh/alias.zeit.co
