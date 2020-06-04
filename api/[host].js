@@ -1,22 +1,21 @@
-const { parse } = require('url');
-const resolve = require('@zeit/dns-cached-resolve');
+const { resolve } = require('dns').promises;
 
 module.exports = async (req, res) => {
   res.setHeader('Content-Type', 'text/plain');
-  const parsed = parse(req.url);
-  const host = parsed.pathname.substring(1).trim();
+  const { host } = req.query;
   if (!host) {
-    res.statusCode = 404;
-    res.end();
+    res.statusCode = 400;
+    res.end('Please provide a hostname');
+    return;
   }
   console.log('Resolving %j', host);
   try {
     const ip = await resolve(host);
-    return ip;
+    res.end(ip[0]);
   } catch (err) {
     if (err.code === 'ENOTFOUND') {
       res.statusCode = 404;
-      res.end();
+      res.end(`Could not find DNS record for "${host}"'`);
     } else {
       throw err;
     }
