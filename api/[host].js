@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
   } catch (err) {
     if (err.code === 'ENOTFOUND') {
       res.statusCode = 404;
-      res.end(`Could not find DNS record for "${host}"'`);
+      res.end(`Could not find DNS record for "${host}"`);
     } else {
       throw err;
     }
