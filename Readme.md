@@ -2,7 +2,7 @@
 
 Resolves a hostname.
 
-> **Example**: https://resolve.n8.io/api/example.com
+> **Example**: https://resolve.n8.io/example.com
 
 ### Usage with `ddclient`
 
@@ -13,7 +13,7 @@ the `A` record):
 
 ```
 protocol=dyndns2
-use=web, web=https://resolve.n8.io/api/cname.vercel-dns.com
+use=web, web=https://resolve.n8.io/cname.vercel-dns.com
 server=domains.google.com
 ssl=yes
 login='abcdef'
