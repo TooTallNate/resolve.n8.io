@@ -6,7 +6,8 @@ Resolves a hostname.
 
 ### Usage with `ddclient`
 
-Google Domains does not support `ALIAS` DNS records, so here is a `ddclient`
+Google Domains [does not support `ALIAS` DNS
+records](https://serverfault.com/a/617329/294389), so here is a `ddclient`
 configuration that acts similar to how alias records work (periodically updating
 the `A` record):
 
